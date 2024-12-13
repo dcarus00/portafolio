@@ -6,17 +6,17 @@
 
 Aquí encontrarás una lista de los proyectos organizados para que puedas explorarlos fácilmente:
 
-1. [🌟 DevSecOps](./DevSecOps/)  
+1. 🌟 DevSecOps
    Este proyecto demuestra la integración de prácticas de desarrollo, operaciones y seguridad en entornos automatizados. Incluye configuraciones y herramientas para:
    - Infraestructura como Código (IaC) con Terraform.
    - Gestión de contenedores con Docker Compose y configuraciones para Prometheus y Blackbox Exporter.
    - Scripts para automatización de backups y restauraciones.
    - Manejo seguro de credenciales y secretos.
 
-2. [🔧 Proyecto 2](./proyecto2/)  
+2.🔧 Proyecto 2  
    Un proyecto enfocado en XYZ (cambiar por descripción).
 
-3. [📈 Proyecto 3](./proyecto3/)  
+3.📈 Proyecto 3] 
    Otro proyecto interesante relacionado con ABC.
 
 ## 🚀 Cómo navegar
