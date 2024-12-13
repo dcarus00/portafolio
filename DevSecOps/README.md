@@ -1,130 +1,180 @@
-# 🚀 Infraestructura DevSecOps Automatizada
-
-[![Terraform](https://img.shields.io/badge/Terraform-1.0+-blue.svg)](https://www.terraform.io/)
-[![Docker](https://img.shields.io/badge/Docker-20.10+-blue.svg)](https://www.docker.com/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+# 🚀 Infraestructura DevSecOps Automatizada en AWS
 
 ## 📄 Descripción
+Este proyecto implementa una infraestructura DevSecOps completamente automatizada en AWS, utilizando ECS (Elastic Container Service) para la orquestación de contenedores. La arquitectura está diseñada siguiendo las mejores prácticas de seguridad y automatización, desplegada completamente mediante Infraestructura como Código (IaC).
 
-Este proyecto presenta una infraestructura DevSecOps completamente automatizada utilizando Docker Compose y Terraform. La configuración incluye servicios esenciales para el monitoreo, gestión de logs, escaneo de vulnerabilidades y pipelines de CI/CD, desplegados en un entorno seguro en AWS.
+## 🏗️ Arquitectura
+
+```plaintext
+                                            ┌─────────────────┐
+                                            │     Route53     │
+                                            └────────┬────────┘
+                                                     │
+                                            ┌────────┴────────┐
+                                            │   Application   │
+                                            │   Load Balancer │
+                                            └────────┬────────┘
+                                                    │
+                                     ┌──────────────┴──────────────┐
+                                     │                             │
+                               ┌─────┴─────┐                 ┌─────┴─────┐
+                               │   ECS     │                 │   ECS     │
+                               │ Cluster 1 │                 │ Cluster 2 │
+                               └─────┬─────┘                 └─────┬─────┘
+                                     │                             │
+                         ┌───────────┴───────────┐     ┌──────────┴───────────┐
+                         │                       │     │                      │
+                   ┌─────┴─────┐           ┌────┴─────┐                 ┌─────┴─────┐          
+                   │ Monitoring│           │  CI/CD   │                 │  Logging  │        
+                   │ Services  │           │ Services │                 │ Services  │        
+                   └───────────┘           └──────────┘                 └───────────┘        
+```
 
 ## ✨ Características Principales
 
-- **🏗️ Infraestructura como Código**
-  - Despliegue automatizado en AWS usando Terraform
-  - Configuración de red segura con VPC, subnets públicas y privadas
-  - Gestión automatizada de grupos de seguridad
+### 🏗️ Infraestructura como Código
+- VPC multi-AZ con subnets públicas y privadas
+- Clusters ECS optimizados para diferentes cargas de trabajo
+- Auto-scaling basado en métricas personalizadas
+- Gestión de secretos con AWS Secrets Manager
 
-- **📊 Monitoreo y Observabilidad**
-  - Stack completo de Prometheus y Grafana
-  - Dashboards predefinidos para métricas clave
-  - Monitoreo de contenedores con cAdvisor
-  - Sistema de alertas configurado
+### 📊 Monitoreo y Observabilidad
+- Stack de Prometheus y Grafana en ECS
+- Service discovery automático
+- Dashboards predefinidos para:
+  - Métricas de contenedores
+  - Métricas de aplicación
+  - Métricas de infraestructura
+  - Costos y utilización
 
-- **📝 Gestión de Logs**
-  - Elasticsearch y Kibana para análisis de logs
-  - Retención y búsqueda eficiente
-  - Dashboards personalizados para visualización
+### 📝 Gestión de Logs
+- Centralización con CloudWatch Logs
+- Flujos automatizados hacia Elasticsearch
+- Retención configurable por tipo de log
+- Dashboards personalizados en Kibana
 
-- **🔒 Seguridad**
-  - Certificados SSL/TLS automatizados con Certbot
-  - Escaneo de vulnerabilidades con Trivy
-  - Gestión segura de secretos
-  - HTTPS forzado en todos los endpoints
+### 🔒 Seguridad
+- WAF integrado con reglas personalizadas
+- Escaneo continuo de vulnerabilidades
+- Rotación automática de credenciales
+- Encriptación en tránsito y en reposo
 
-- **🔄 CI/CD**
-  - Jenkins preconfigurado con pipeline as code
-  - Integración con Docker para builds
-  - Flujos de trabajo automatizados
-
-- **💾 Backup y Recuperación**
-  - Sistema automatizado de backups a S3
-  - Retención configurable
-  - Scripts de restauración incluidos
+### 🔄 CI/CD
+- Pipelines de Jenkins en ECS
+- Integración con AWS CodeBuild
+- Despliegues Blue/Green automatizados
+- Tests de seguridad integrados
 
 ## 🛠️ Stack Tecnológico
 
-- **Infraestructura**: AWS, Terraform
-- **Contenedores**: Docker, Docker Compose
-- **Monitoreo**: Prometheus, Grafana, Node Exporter, cAdvisor
-- **Logs**: Elasticsearch, Kibana
-- **CI/CD**: Jenkins
-- **Seguridad**: Certbot, Trivy
-- **Backup**: AWS S3, AWS CLI
+### AWS Services
+- ECS (Elastic Container Service)
+- ECR (Elastic Container Registry)
+- CloudWatch
+- WAF & Shield
+- Secrets Manager
+- Systems Manager
+- Route 53
+- Application Load Balancer
+
+### Monitoring & Logging
+- Prometheus
+- Grafana
+- Elasticsearch
+- Kibana
+- CloudWatch Logs
+
+### CI/CD & Security
+- Jenkins
+- AWS CodeBuild
+- Trivy
+- OWASP ZAP
 
 ## 📋 Prerequisitos
 
+- Cuenta AWS con permisos de administrador
 - AWS CLI configurado
-- Docker y Docker Compose
 - Terraform >= 1.0.0
 - Git
 
-## 🚀 Inicio Rápido
+## 🚀 Despliegue
 
 1. **Clonar el repositorio**
 ```bash
-git clone https://github.com/dcarus00/portafolio.git
-cd portafolio
+git clone https://github.com/tu-usuario/devsecops-portfolio.git
+cd devsecops-portfolio
 ```
 
-2. **Configurar variables de entorno**
+2. **Configurar variables de AWS**
 ```bash
-cp .env.example .env
-# Editar .env con tus valores
+export AWS_ACCESS_KEY_ID="tu-access-key"
+export AWS_SECRET_ACCESS_KEY="tu-secret-key"
+export AWS_DEFAULT_REGION="us-west-2"  # o tu región preferida
 ```
 
-3. **Desplegar infraestructura**
+3. **Inicializar y aplicar Terraform**
 ```bash
 cd terraform
 terraform init
-terraform apply
-
-cd ..
-docker-compose up -d
+terraform plan -out=tfplan
+terraform apply tfplan
 ```
 
-## 📂 Estructura del Proyecto
+4. **Verificar el despliegue**
+```bash
+# Obtener la URL del Load Balancer
+terraform output alb_dns_name
+
+# Obtener la URL de Grafana
+terraform output grafana_url
+
+# Obtener la URL de Kibana
+terraform output kibana_url
+```
+
+## 📁 Estructura del Proyecto
 
 ```
 .
-├── docker/
-│   ├── prometheus/
-│   │   └── prometheus.yml
-│   ├── blackbox/
-│   │   └── blackbox.yml
-│   └── backup/
-│       └── backup-script.sh
 ├── terraform/
-│   ├── main.tf
-│   ├── variables.tf
-│   └── outputs.tf
+│   ├── modules/
+│   │   ├── vpc/
+│   │   ├── ecs/
+│   │   ├── monitoring/
+│   │   ├── logging/
+│   │   └── security/
+│   ├── environments/
+│   │   ├── prod/
+│   │   └── staging/
+│   └── main.tf
+├── docker/
+│   ├── monitoring/
+│   ├── logging/
+│   └── ci-cd/
 ├── scripts/
-│   └── restore-backup.sh
-├── secrets/
-│   └── README.md
-├── docker-compose.yml
-├── .gitignore
-└── README.md
+│   ├── deploy.sh
+│   └── cleanup.sh
+└── docs/
+    ├── architecture.md
+    └── maintenance.md
 ```
 
-## 🚀 Despliegue
+## 📝 Notas de Mantenimiento
 
-### 1. Infraestructura AWS
-```bash
-cd terraform
-terraform init
-terraform plan
-terraform apply
-```
+- Los backups se realizan automáticamente cada 24 horas
+- Las actualizaciones de seguridad se aplican automáticamente
+- Los logs se retienen por 30 días por defecto
+- Las métricas se almacenan por 90 días
 
-### 2. Servicios
-```bash
-docker-compose up -d
-```
+## 📫 Contacto
 
-## 📝 Configuración y Uso
+- LinkedIn: [Tu perfil de LinkedIn]
+- Email: [Tu email profesional]
+- Website: [Tu sitio web]
 
-[El contenido detallado de configuración sigue igual...]
+## 📄 Licencia
+
+Este proyecto está bajo la licencia MIT - ver el archivo [LICENSE.md](LICENSE.md) para más detalles.
 
 ## 🤝 Contribución
 
