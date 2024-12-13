@@ -620,7 +620,7 @@ Este proyecto está bajo la licencia MIT - ver el archivo [LICENSE](LICENSE) par
 ## 💬 Soporte
 
 - 📧 Email: dcaruso@idmovil.com.uy
-- 💬 Discord: [Únete a nuestro servidor]([https://discord.gg/WcJdRugq8V])
+- 💬 Discord: [Únete a nuestro servidor](https://discord.gg/WcJdRugq8V)
 <!-- - 📚 Issues: [GitHub Issues](https://github.com/tu-usuario/infraestructura-devsecops/issues)
 
 ## ⭐️ Muestra tu apoyo
