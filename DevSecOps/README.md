@@ -168,8 +168,8 @@ terraform output kibana_url
 
 ## 📫 Contacto
 
-- LinkedIn: [[Tu perfil de LinkedIn](https://www.linkedin.com/in/dcarus00/)]
-- Email: [github.com/dcarus00]
+- LinkedIn: [[Diego C.](https://www.linkedin.com/in/dcarus00/)]
+- Email: [[Correo](github.com/dcarus00)]
 <!-- - Website: [Tu sitio web]-->
 
 ## 📄 Licencia
