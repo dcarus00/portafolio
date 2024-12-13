@@ -168,9 +168,9 @@ terraform output kibana_url
 
 ## 📫 Contacto
 
-- LinkedIn: [Tu perfil de LinkedIn]
-- Email: [Tu email profesional]
-- Website: [Tu sitio web]
+- LinkedIn: [[Tu perfil de LinkedIn](https://www.linkedin.com/in/dcarus00/)]
+- Email: [diego.mca@proton.me]
+<!-- - Website: [Tu sitio web]-->
 
 ## 📄 Licencia
 
@@ -188,8 +188,3 @@ Las contribuciones son bienvenidas.
 ## 📝 Licencia
 
 Este proyecto está bajo la licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
-
-## 💬 Soporte
-
-- 📧 Email: dcaruso@idmovil.com.uy
-- 💬 Discord: [Únete a nuestro servidor](https://discord.gg/WcJdRugq8V)
