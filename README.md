@@ -4,7 +4,6 @@
 [![Docker](https://img.shields.io/badge/Docker-20.10+-blue.svg)](https://www.docker.com/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-# 🚀 Infraestructura DevSecOps Automatizada
 ## 📄 Descripción
 
 Este proyecto presenta una infraestructura DevSecOps completamente automatizada utilizando Docker Compose y Terraform. La configuración incluye servicios esenciales para el monitoreo, gestión de logs, escaneo de vulnerabilidades y pipelines de CI/CD, desplegados en un entorno seguro en AWS.
