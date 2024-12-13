@@ -9,15 +9,80 @@
 
 Este proyecto presenta una infraestructura DevSecOps completamente automatizada utilizando Docker Compose y Terraform. La configuración incluye servicios esenciales para el monitoreo, gestión de logs, escaneo de vulnerabilidades y pipelines de CI/CD, desplegados en un entorno seguro en AWS.
 
-## 🔧 Tecnologías Utilizadas
+## ✨ Características Principales
 
-- Docker Compose: Orquestación de contenedores
-- Terraform: Infraestructura como código
-- AWS: Proveedor de servicios en la nube
-- Prometheus & Grafana: Monitoreo y visualización de métricas
-- Elasticsearch & Kibana: Gestión y visualización de logs
-- Trivy: Escaneo de vulnerabilidades
-- Jenkins: Automatización de pipelines de CI/CD
+- **🏗️ Infraestructura como Código**
+  - Despliegue automatizado en AWS usando Terraform
+  - Configuración de red segura con VPC, subnets públicas y privadas
+  - Gestión automatizada de grupos de seguridad
+
+- **📊 Monitoreo y Observabilidad**
+  - Stack completo de Prometheus y Grafana
+  - Dashboards predefinidos para métricas clave
+  - Monitoreo de contenedores con cAdvisor
+  - Sistema de alertas configurado
+
+- **📝 Gestión de Logs**
+  - Elasticsearch y Kibana para análisis de logs
+  - Retención y búsqueda eficiente
+  - Dashboards personalizados para visualización
+
+- **🔒 Seguridad**
+  - Certificados SSL/TLS automatizados con Certbot
+  - Escaneo de vulnerabilidades con Trivy
+  - Gestión segura de secretos
+  - HTTPS forzado en todos los endpoints
+
+- **🔄 CI/CD**
+  - Jenkins preconfigurado con pipeline as code
+  - Integración con Docker para builds
+  - Flujos de trabajo automatizados
+
+- **💾 Backup y Recuperación**
+  - Sistema automatizado de backups a S3
+  - Retención configurable
+  - Scripts de restauración incluidos
+
+## 🛠️ Stack Tecnológico
+
+- **Infraestructura**: AWS, Terraform
+- **Contenedores**: Docker, Docker Compose
+- **Monitoreo**: Prometheus, Grafana, Node Exporter, cAdvisor
+- **Logs**: Elasticsearch, Kibana
+- **CI/CD**: Jenkins
+- **Seguridad**: Certbot, Trivy
+- **Backup**: AWS S3, AWS CLI
+
+## 📋 Prerequisitos
+
+- AWS CLI configurado
+- Docker y Docker Compose
+- Terraform >= 1.0.0
+- Git
+
+## 🚀 Inicio Rápido
+
+1. **Clonar el repositorio**
+```bash
+git clone https://github.com/tu-usuario/infraestructura-devsecops.git
+cd infraestructura-devsecops
+```
+
+2. **Configurar variables de entorno**
+```bash
+cp .env.example .env
+# Editar .env con tus valores
+```
+
+3. **Desplegar infraestructura**
+```bash
+cd terraform
+terraform init
+terraform apply
+
+cd ..
+docker-compose up -d
+```
 
 ## 📂 Estructura del Proyecto
 
@@ -520,86 +585,10 @@ for service in prometheus elasticsearch grafana; do
     aws s3 cp "${service}_${TIMESTAMP}.tar.gz" "s3://${S3_BUCKET}/${service}/"
     rm "${service}_${TIMESTAMP}.tar.gz"
 ```
-## 🎯 Descripción
 
-Una solución completa y automatizada de infraestructura DevSecOps que integra las mejores prácticas de desarrollo, seguridad y operaciones. Este proyecto proporciona una infraestructura lista para usar que incluye monitoreo, logging, seguridad y CI/CD, todo desplegado en AWS y gestionado con Infrastructure as Code.
 
-## ✨ Características Principales
 
-- **🏗️ Infraestructura como Código**
-  - Despliegue automatizado en AWS usando Terraform
-  - Configuración de red segura con VPC, subnets públicas y privadas
-  - Gestión automatizada de grupos de seguridad
-
-- **📊 Monitoreo y Observabilidad**
-  - Stack completo de Prometheus y Grafana
-  - Dashboards predefinidos para métricas clave
-  - Monitoreo de contenedores con cAdvisor
-  - Sistema de alertas configurado
-
-- **📝 Gestión de Logs**
-  - Elasticsearch y Kibana para análisis de logs
-  - Retención y búsqueda eficiente
-  - Dashboards personalizados para visualización
-
-- **🔒 Seguridad**
-  - Certificados SSL/TLS automatizados con Certbot
-  - Escaneo de vulnerabilidades con Trivy
-  - Gestión segura de secretos
-  - HTTPS forzado en todos los endpoints
-
-- **🔄 CI/CD**
-  - Jenkins preconfigurado con pipeline as code
-  - Integración con Docker para builds
-  - Flujos de trabajo automatizados
-
-- **💾 Backup y Recuperación**
-  - Sistema automatizado de backups a S3
-  - Retención configurable
-  - Scripts de restauración incluidos
-
-## 🛠️ Stack Tecnológico
-
-- **Infraestructura**: AWS, Terraform
-- **Contenedores**: Docker, Docker Compose
-- **Monitoreo**: Prometheus, Grafana, Node Exporter, cAdvisor
-- **Logs**: Elasticsearch, Kibana
-- **CI/CD**: Jenkins
-- **Seguridad**: Certbot, Trivy
-- **Backup**: AWS S3, AWS CLI
-
-## 📋 Prerequisitos
-
-- AWS CLI configurado
-- Docker y Docker Compose
-- Terraform >= 1.0.0
-- Git
-
-## 🚀 Inicio Rápido
-
-1. **Clonar el repositorio**
-```bash
-git clone https://github.com/tu-usuario/infraestructura-devsecops.git
-cd infraestructura-devsecops
-```
-
-2. **Configurar variables de entorno**
-```bash
-cp .env.example .env
-# Editar .env con tus valores
-```
-
-3. **Desplegar infraestructura**
-```bash
-cd terraform
-terraform init
-terraform apply
-
-cd ..
-docker-compose up -d
-```
-
-## 📚 Documentación
+<!-- - ## 📚 Documentación
 
 La documentación completa está disponible en la [Wiki](wiki) del proyecto, incluyendo:
 
@@ -615,11 +604,10 @@ La documentación completa está disponible en la [Wiki](wiki) del proyecto, inc
 - Equipos de desarrollo que requieren CI/CD y monitoreo
 - Empresas que buscan implementar DevSecOps
 - Proyectos que necesitan cumplir con estándares de seguridad
-
+-->
 ## 🤝 Contribución
 
-Las contribuciones son bienvenidas. Por favor, lee la [guía de contribución](CONTRIBUTING.md) para más detalles.
-
+Las contribuciones son bienvenidas.
 1. Fork el proyecto
 2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
 3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
@@ -632,9 +620,9 @@ Este proyecto está bajo la licencia MIT - ver el archivo [LICENSE](LICENSE) par
 
 ## 💬 Soporte
 
-- 📧 Email: tu@email.com
-- 💬 Discord: [Únete a nuestro servidor](https://discord.gg/tu-servidor)
-- 📚 Issues: [GitHub Issues](https://github.com/tu-usuario/infraestructura-devsecops/issues)
+- 📧 Email: dcaruso@idmovil.com.uy
+- 💬 Discord: [Únete a nuestro servidor]([https://discord.gg/tu-servidor](https://discord.gg/WcJdRugq8V))
+<!-- - 📚 Issues: [GitHub Issues](https://github.com/tu-usuario/infraestructura-devsecops/issues)
 
 ## ⭐️ Muestra tu apoyo
 
@@ -656,3 +644,5 @@ Dale una estrella ⭐️ si este proyecto te ayudó!
 - [ ] Dashboards adicionales
 - [ ] Soporte para otros proveedores cloud
 - [ ] Sistema de documentación automática
+-->
+
