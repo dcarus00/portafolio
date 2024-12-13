@@ -519,7 +519,7 @@ for service in prometheus elasticsearch grafana; do
     tar czf "${service}_${TIMESTAMP}.tar.gz" "${service}/"
     aws s3 cp "${service}_${TIMESTAMP}.tar.gz" "s3://${S3_BUCKET}/${service}/"
     rm "${service}_${TIMESTAMP}.tar.gz"
-
+```
 ## 🎯 Descripción
 
 Una solución completa y automatizada de infraestructura DevSecOps que integra las mejores prácticas de desarrollo, seguridad y operaciones. Este proyecto proporciona una infraestructura lista para usar que incluye monitoreo, logging, seguridad y CI/CD, todo desplegado en AWS y gestionado con Infrastructure as Code.
