@@ -2,7 +2,7 @@
 
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 BACKUP_DIR="/backup"
-S3_BUCKET="${BACKUP_BUCKET}"
+S3_BUCKET="nombre-del-bucket"
 
 # Comprimir directorios de datos
 cd ${BACKUP_DIR}
