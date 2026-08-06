@@ -1,27 +1,24 @@
-# 🎨 Bienvenido a mi Portafolio de Proyectos
+# Portafolio de Proyectos — Diego Caruso
 
-¡Hola! 👋 Soy Diego, un apasionado por la tecnología, el desarrollo y la resolución de problemas. Este repositorio es una colección de los proyectos en los que he trabajado, cada uno reflejando diferentes áreas de interés y habilidades que he desarrollado a lo largo de mi carrera.
+Colección de proyectos de infraestructura, DevOps e IoT desarrollados a lo largo de más de 7 años trabajando como sysadmin/DevOps.
 
 ## 📂 Proyectos
 
-Aquí encontrarás una lista de los proyectos organizados para que puedas explorarlos fácilmente:
+### DevOps e Infraestructura
 
-1. [🌟 DevSecOps](./DevSecOps/)  
-   Este proyecto demuestra la integración de prácticas de desarrollo, operaciones y seguridad en entornos automatizados. Incluye configuraciones y herramientas para:
-   - Infraestructura como Código (IaC) con Terraform.
-   - Gestión de contenedores con Docker Compose y configuraciones para Prometheus y Blackbox Exporter.
-   - Scripts para automatización de backups y restauraciones.
-   - Manejo seguro de credenciales y secretos.
+| Proyecto | Descripción | Stack |
+|---|---|---|
+| [infra-monitoring-stack](https://github.com/dcarus00/infra-monitoring-stack) | Monitoreo completo para PyMEs: hosts, contenedores, endpoints, SSL, predicción de disco | Prometheus, Grafana, Alertmanager |
+| [cicd-pipeline-templates](https://github.com/dcarus00/cicd-pipeline-templates) | Pipelines con gates de calidad, canary y rollback automático | GitHub Actions, GitLab CI |
+| [terraform-aws-infrastructure](https://github.com/dcarus00/terraform-aws-infrastructure) | Infra modular AWS con entornos staging/producción | Terraform, AWS |
+| [DevSecOps](DevSecOps/) | Laboratorio DevSecOps con docker-compose, terraform y gestión de secrets | Docker, Terraform, Bash |
 
-2. [🔧 Proyecto 2](./proyecto2/)  
-   Un proyecto enfocado en XYZ (cambiar por descripción).
+### IoT y Electrónica
 
-3. [📈 Proyecto 3](./proyecto3/)  
-   Otro proyecto interesante relacionado con ABC.
+| Proyecto | Descripción | Stack |
+|---|---|---|
+| [edge-sensor-firmware](https://github.com/dcarus00/edge-sensor-firmware) | Nodos ESP32 de bajo costo con backend MQTT/TLS auto-hospedado | ESP32, MQTT, InfluxDB, Grafana |
 
-## 🚀 Cómo navegar
-Haz clic en el nombre de cada proyecto para explorar su contenido y obtener más detalles sobre su propósito, implementación y aprendizajes.
+## 📫 Contacto
 
----
-
-¡Gracias por visitar mi portafolio! Si tienes alguna pregunta o te interesa colaborar en algo, no dudes en contactarme. ✉️
+Abierto a proyectos freelance y contratos remotos. Ver [mi perfil](https://github.com/dcarus00).
