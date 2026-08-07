@@ -169,7 +169,7 @@ terraform output kibana_url
 ## 📫 Contacto
 
 - LinkedIn: [[Diego C.](https://www.linkedin.com/in/dcarus00/)]
-- Email: [[Correo](github.com/dcarus00)]
+- GitHub: [github.com/dcarus00](https://github.com/dcarus00)
 <!-- - Website: [Tu sitio web]-->
 
 ## 📄 Licencia
