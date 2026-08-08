@@ -37,6 +37,12 @@ Colección de proyectos de infraestructura, DevOps e IoT desarrollados a lo larg
 | [graylog-docker-stack](https://github.com/dcarus00/graylog-docker-stack) | Centralización de logs production-ready | Graylog, OpenSearch |
 | [uptime-monitor-pymes](https://github.com/dcarus00/uptime-monitor-pymes) | Monitoreo como servicio para PyMEs (con propuesta comercial) | Prometheus, Grafana |
 
+## 🤖 Automatización y Herramientas
+
+| Proyecto | Descripción | Stack |
+|---|---|---|
+| [telegram-job-radar-bot](https://github.com/dcarus00/telegram-job-radar-bot) | Bot de Telegram que monitorea ofertas freelance y filtra por stack, configurable vía YAML | Python, Telegram API, scraping |
+
 ## 🔌 IoT y Electrónica
 
 | Proyecto | Descripción | Stack |
