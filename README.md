@@ -42,6 +42,7 @@ Colección de proyectos de infraestructura, DevOps e IoT desarrollados a lo larg
 | Proyecto | Descripción | Stack |
 |---|---|---|
 | [telegram-job-radar-bot](https://github.com/dcarus00/telegram-job-radar-bot) | Bot de Telegram que monitorea ofertas freelance y filtra por stack, configurable vía YAML | Python, Telegram API, scraping |
+| [local-ai-chatbot](https://github.com/dcarus00/local-ai-chatbot) | Bot de respuestas automáticas con IA 100% local (Ollama): escritura humanizada, ventanas de sueño, throttling. Sin APIs pagas | Node.js, Playwright, Ollama |
 
 ## 🔌 IoT y Electrónica
 
